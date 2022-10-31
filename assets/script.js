@@ -7,6 +7,9 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
 
   // character arrays
+  // create variables to hold all characters of their relevant purpose
+  // .split() takes the input string and turns splits it into individual characters, turning the variable
+  // into an array of characters instead of a single string
   var lowerChar = 'abcdefghijklmnopqrstuvwxyz'.split('');
   var upperChar = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
   var numChar = '1234567890'.split('');
@@ -14,7 +17,7 @@ function writePassword() {
 
   // Declares array consisting of all possible criteria
   var availableChar = Array();
-  // Places character array at given index. This creates an array of arrays
+  // Places each character array at given index. This creates an array of arrays inside availableChar
   availableChar[0] = lowerChar;
   availableChar[1] = upperChar;
   availableChar[2] = numChar;
@@ -30,15 +33,15 @@ function writePassword() {
   + "- Select the length of your password");
 
   // declare variables that correlate to user inputs
-  var lowerChoice = "";
-  var upperChoice = "";
-  var numChoice = "";
-  var specialChoice = "";
-  var lower = "";
-  var upper = "";
-  var number = "";
-  var special = "";
-  var passwordLength = "";
+  var lowerChoice;
+  var upperChoice;
+  var numChoice;
+  var specialChoice;
+  var lower;
+  var upper;
+  var number;
+  var special;
+  var passwordLength;
 
   // Put prompts in while loop(s) until user selects valid response or cancels a prompt.
   // Outer While loop checks for the case where the user selects 'no' on all criteria and program requests the user reselect criteria.
@@ -220,6 +223,7 @@ function writePassword() {
 }
 
 // Add event listener to generate button
+// when button is clicked, program will run to generate password
 generateBtn.addEventListener("click", writePassword);
 
 
